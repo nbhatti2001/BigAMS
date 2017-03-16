@@ -1,0 +1,176 @@
+
+@media print
+{
+	.top_header{display:none;}
+	.top_menu{display:none;}
+}
+body {
+font-family:Arial;
+font-size:60% !important;
+background-color:#F9EDF1;
+}
+#left-panel
+{
+	
+	width:10%;
+	height:800px;
+	float:left;
+}
+#main-body
+{
+	float:left;
+	width:80%;
+	min-width:100px;
+}
+.main-contents
+{
+	min-width:1200px;
+}
+input {
+font-family:Arial;
+font-size:14px;
+}
+label{
+font-family:Arial;
+font-size:14px;
+color:#999999;
+}
+.tblSaveForm {
+	border-top:2px #999999 solid;
+	background-color: #f8f8f8;
+}
+.tableheader {
+background-color: #BB2354;
+color:#FFFFFF;
+font-weight:600;
+font-size:12px;
+}
+.table_total {
+color:#000;
+font-weight:700;
+font-size:12px;
+}
+
+.report_data
+{
+	font-size:12px;
+}
+.tablerow {
+background-color: #A7D6F1;
+color:white;
+}
+.btnSubmit {
+background-color:#1B1D4D;
+padding:5px;
+border-color:#308FA3;
+border-radius:4px;
+color:white;
+float:right;
+
+}
+.message {
+color: #FF0000;
+text-align: center;
+width: 100%;
+font-size:14px;
+}
+.alerts {
+color: #FF0000;
+text-align: center;
+width: 100%;
+font-size:14px;
+}
+.txtField {
+padding: 5px;
+border:#CE4E77 1px solid;
+border-radius:4px;
+width:170px;
+/*margin-bottom:-2px;*/
+
+}
+@supports (-webkit-appearance:none) {
+	.txtField {
+		padding: 5px;
+		border:#CE4E77 1px solid;
+		border-radius:4px;
+		width:170px;
+		margin-bottom:1.5px;
+	}
+} 
+.errField {
+border:#FF0000 1px solid;
+background-color:pink;
+}
+
+.evenRow {
+background-color: #E2EDF9;
+font-size:12px;
+color:#101010;
+}
+.evenRow:hover {
+background-color: #F2C4D2;
+}
+.oddRow {
+background-color: #B3E8FF;
+font-size:12px;
+color:#101010;
+}
+.oddRow:hover {
+background-color: #F2C4D2;
+}
+.tblListForm {
+border-top:2px #999999 solid;
+}
+.listheader {
+background-color: #CE4E77;
+font-size:12px;
+font-weight:bold;
+}
+.link{
+text-decoration:none;
+color:#5e8fc7;
+font-size:11px;
+}
+.required
+{
+	color:red;
+}
+select
+{
+	border: 1px solid #CE4E77;
+	width:175px;
+}
+.items
+{
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius:5px;
+	width:25px;
+	height:20px;
+	display:inline;
+}
+.gtotal
+{
+	margin-top:10px;
+}
+.gridheader
+{
+	font-weight:900;
+}
+.menu_txt
+{
+	font-size:11px;
+	color:#000;
+	padding-top:15px;
+	padding-left:10px;
+	position:absolute ;
+	top:40px;
+	left:870px;
+	font-family:verdana;
+}
+.link-icon 
+{
+	padding:0px 0px 0px 2px; 
+	margin:0px;
+	
+}	

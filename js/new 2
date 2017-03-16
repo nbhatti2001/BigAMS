@@ -1,0 +1,74 @@
+pDeptNo	varchar(3)	Unchecked
+pENo	varchar(8)	Unchecked
+pGCode	varchar(3)	Unchecked
+pGender	varchar(10)	Checked
+pName	varchar(40)	Checked
+pFName	varchar(40)	Checked
+pPrmntAdd	varchar(150)	Checked
+pResAdd	varchar(70)	Checked
+pCity	varchar(30)	Checked
+pResPh	varchar(15)	Checked
+pMobPh	varchar(15)	Checked
+pIDNo	varchar(25)	Checked
+pIDMark	varchar(50)	Checked
+pDoB	varchar(10)	Unchecked
+pDependents	int	Checked
+pMChild	int	Checked
+pFChild	int	Checked
+pDoAppmnt	varchar(10)	Unchecked
+pLstPrmtnDate	varchar(10)	Checked
+pTaxNo	varchar(20)	Checked
+pNoOfIncrements	int	Checked
+pBankAcNo	varchar(15)	Checked
+pBankCode	varchar(3)	Unchecked
+pEOBINo	int	Checked
+pTaxDed	int	Checked
+pAdvDed	int	Checked
+pSSNo	varchar(25)	Checked
+pDSNo	varchar(3)	Unchecked
+pPayScaleID	varchar(8)	Unchecked
+pAnulIncmnt	numeric(10, 0)	Checked
+pNewIncmnt	numeric(10, 0)	Checked
+pBasicPay	numeric(10, 0)	Checked
+pInBasic	numeric(10, 0)	Checked
+pInBasic2010	numeric(10, 0)	Checked
+pDearAllowance	int	Checked
+pMessAllowance	int	Checked
+pGPAllowance	int	Checked
+pPMAllowance	int	Checked
+pStationAllowance	int	Checked
+pOtherAllowance	int	Checked
+pIncAllowance	int	Checked
+pEmployee	varchar(1)	Checked
+pExDate	varchar(10)	Checked
+pExReason	varchar(50)	Checked
+pJobNature	varchar(1)	Checked
+pDrCode	varchar(25)	Checked
+pCrCode	varchar(25)	Checked
+pSpouseName	varchar(30)	Checked
+pEmgCntName	varchar(30)	Checked
+pEmgCntPhone	varchar(15)	Checked
+pShift	varchar(1)	Checked
+pActive	bit	Checked
+pContract	bit	Checked
+pLeavingDate	varchar(10)	Checked
+pLeavingReason	varchar(50)	Checked
+pAlOHRent	numeric(18, 0)	Checked
+pAlNHRent	numeric(18, 0)	Checked
+pAlOTBill	numeric(18, 0)	Checked
+pAlNTBill	numeric(18, 0)	Checked
+pAlOServant	numeric(18, 0)	Checked
+pAlNServant	numeric(18, 0)	Checked
+pAlODriver	numeric(18, 0)	Checked
+pAlNDriver	numeric(18, 0)	Checked
+pAlOUtility	numeric(18, 0)	Checked
+pAlNUtility	numeric(18, 0)	Checked
+pAlOCony	numeric(18, 0)	Checked
+pAlNCony	numeric(18, 0)	Checked
+pAlOIncharge	numeric(18, 0)	Checked
+pAlNIncharge	numeric(18, 0)	Checked
+pPk_ID	numeric(10, 0)	Unchecked
+pDateTime	datetime	Checked
+pFix	bit	Checked
+pSortId	int	Checked
+	

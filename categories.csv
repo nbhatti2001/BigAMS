@@ -1,0 +1,13 @@
+insert into categories(code,name) values(
+insert into categories(code,name) values('CG-CORP.','CORPORATE GROUP');
+insert into categories(code,name) values('CG-DISTR.','DISTRIBUTORS GROUP');
+insert into categories(code,name) values('CG-EXPORT','EXPORT GROUP');
+insert into categories(code,name) values('CG-FS','FOODS SERVICE/HoReCa/Institute GROUP');
+insert into categories(code,name) values('CG-MESS','MESS AT PROCESSING PLANT');
+insert into categories(code,name) values('CG-P/SALE','PLANT FAIR SHOP');
+insert into categories(code,name) values('CG-REN','RENDERING PLANT GROUP');
+insert into categories(code,name) values('CG-RT-BCS','RETAIL - BIG BIRD CHICKEN SHOPS');
+insert into categories(code,name) values('CG-RT-GT','RETAIL -GENERAL TRADE');
+insert into categories(code,name) values('CG-RT-IMT','RETAIL - INTERNATIONAL MODERN TRADE');
+insert into categories(code,name) values('CG-RT-LG','RETAIL -LARGE GROCERY');
+insert into categories(code,name) values('CG-RT-LMT','RETAIL - LOCAL MODERN TRADE');
