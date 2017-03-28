@@ -97,6 +97,14 @@
 		</ul>
    </li>
    
+    <li class='has-sub'><a href='freezer.php'><span>Freezer</span></a>
+		<ul>
+			<li><a href='freezer.php?action=freezer'><span>Add Freezer</span></a></li>
+			<li class='last'><a href='list_freezer.php?action=freezer'><span>All Freezer</span></a></li>
+			<li class='last'><a href='freezer.php?action=return'><span>Return</span></a></li>
+		</ul>
+   </li>
+   
    <li class='has-sub'><a href='dispatch.php'><span>Return</span></a>
 		<ul>
 			<li><a href='dispatch.php?action=Return'><span>Add Return</span></a></li>

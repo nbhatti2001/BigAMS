@@ -9,6 +9,7 @@ function throwException($query = null)
     echo $msg;
 }
 
+
 function getRows($query_string)
 {
     $rs=array();
@@ -24,6 +25,7 @@ function getRows($query_string)
         while($row=mysql_fetch_assoc($queryId))
         {
             $rs[]=$row;
+			 
         }
         return $rs;
     }
@@ -84,12 +86,28 @@ function getRegionsssss($region="")
 			</select>";
 	return $str;
 }
-function getRegions($def="")
+function getRegions($def="",$name="",$js="")
 {
 	$sql="select * from regions where is_active=1 order by id";
 	$rows=getRows($sql);
-	$str= "\n <select id='region' name='region' >
+	if($name=="")
+		$name="region";	
+	$str= "\n <select id='$name' name='$name' onclick=\"$js\" >
 		<option value=''>-- Select Location --</option>";
+	for($cnt=0;$cnt<count($rows);$cnt++)
+		$str.="\n <option value='" . $rows[$cnt]['id']  . "' "  .($def==$rows[$cnt]['id']?"selected":"")  ." >". $rows[$cnt]['name']  ."</option>";
+	$str.="\n </select>";
+	return $str;
+}
+
+function getFaculty($def="",$name="")
+{
+	$sql="select * from faculty order by id";
+	$rows=getRows($sql);
+	if($name=="")
+		$name="faculty";	
+	$str= "\n <select id='$name' name='$name' >
+		<option value=''>-- Select Faculty --</option>";
 	for($cnt=0;$cnt<count($rows);$cnt++)
 		$str.="\n <option value='" . $rows[$cnt]['id']  . "' "  .($def==$rows[$cnt]['id']?"selected":"")  ." >". $rows[$cnt]['name']  ."</option>";
 	$str.="\n </select>";

@@ -94,6 +94,42 @@ function chkStockB4Save()
 	}
 	return true;
 }
+
+/*
+function AddFreezer()
+{
+	isExist=false;
+	//chkStockB4Save();
+	$('input').removeClass('errField');
+    if($("#region").val()=="")
+    {
+        $("#region").addClass("errField");
+		$("#message").html("Complete required fields ");
+		$("#message").show().fadeOut(5000);
+		location.hash = "#top" ;
+        return false;
+    } 
+    if($("#ftype").val()=="")
+    {
+        $("#ftype").addClass("errField");
+		$("#message").html("Complete required fields ");
+		$("#message").show().fadeOut(5000);
+		location.hash = "#top" ;
+        return false;
+    } 
+    if($("#serialno").val()=="")
+    {
+        $("#serialno").addClass("errField");
+		$("#message").html("Complete required fields ");
+		$("#message").show().fadeOut(5000);
+		location.hash = "#top" ;
+        return false;
+    } 
+		
+	return true;
+}
+*/
+
 function AddDispatch()
 {
 	isExist=false;

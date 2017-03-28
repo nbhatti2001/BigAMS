@@ -203,6 +203,8 @@ $(function() {
 							?>
 								<span id="custs" style="display:inline;float:left;" ><input value="<?=$custName?>" class="txtField custs" type="text" name="cust[<?=$cnt?>]" id="cust<?=$cnt?>" /> </span>
 							<?php } ?>
+							
+							
 							<?php for($cnt=1;$cnt<=20;$cnt++) { 
 								$idx=$cnt-1;
 								$SalesInfo="";
