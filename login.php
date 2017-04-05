@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 if(count($_POST)>0) 
 {
     require_once("includes/database.php") ; 

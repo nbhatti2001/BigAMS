@@ -61,7 +61,7 @@ $('#addi').click(function (e) {
 
 
 </script>
-<form action="groups.php" method="post" >
+<form action="add_group.php" method="post" >
 	<table border="0" cellpadding="3" cellspacing="0" width="500px" align="center" class="tblSaveForm">
 	<tr class="tableheader">
         <td colspan="6">User Rolls </td>

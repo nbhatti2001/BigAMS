@@ -40,12 +40,17 @@ if($action !="Purchase")
 		where entry_type='$action' $userFilter
 		";*/
 		
-		$sql ="SELECT * from transfer_main";
+	$sql="SELECT transfer_main.* ,customers.account_name FROM transfer_main
+		
+		inner join customers on transfer_main.ccode = customers.id
+		where type='$action' 
+		";
 }
 else
 {
-	$sql="SELECT transfer_main.* ,'' fromLocation, regionto.name as toLocation FROM dispatch_main
+	$sql="SELECT transfer_main.* ,'' fromLocation, regionto.name as toLocation,customers.account_name FROM dispatch_main
 		inner join regions regionto on dispatch_main.to_ = regionto.id 
+		inner join customers on transfer_main.ccode = customers.id
 		where entry_type='$action' 
 		";
 }
@@ -63,9 +68,7 @@ require_once("includes/header.php");
 	
 	<td>Customer Code</td>
 	<td>Delivery Address  </td>
-	<td>Fdn</td>
-	<td>Tso</td>
-		<td>Rsm</td>
+
     <td width="60px">Actions</td>
     </tr>
     <?php
@@ -81,12 +84,10 @@ require_once("includes/header.php");
 	<td><?php echo date("d-m-Y",strtotime($row["date"])); ?></td>
    
 	
-	<td><?php echo $row["ccode"]; ?></td>
+	<td><?php echo $row["account_name"]; ?></td>
 	
 	<td><?php echo $row["daddress"]; ?></td>
-	<td><?php echo $row["fdn"]; ?></td>
-	<td><?php echo $row["tso"]; ?></td>
-	<td><?php echo $row["rsm"]; ?></td>
+
         
 
     <td>
@@ -95,13 +96,13 @@ require_once("includes/header.php");
 	<?php }elseif($action=="Purchase"){ ?>
 		<a href="edit_purchase.php?action=<?=$action?>&tId=<?php echo $row["id"]; ?>" class="link"><img class='link-icon'  alt='Edit' title='Edit' src='images/edit.png' width='15px' height='15px' hspace='10' /></a>  
 	<?php }else{
-		if($_SESSION['userId'] == $row['user_id'] ) {
+		if($_SESSION['userId'] == $row['user_id'] && FALSE ) {
 	?>
 		<a href="edit_transfer.php?action=<?=$action?>&tId=<?php echo $row["id"]; ?>" class="link"><img class='link-icon'  alt='Edit' title='Edit' src='images/edit.png' width='15px' height='15px' hspace='10' /></a>  
 	<?php  } }?>
 	<?php if($_SESSION['userId'] == $row['user_id'] &&  false) { ?>
     <a href="delete_item.php?itemId=<?php echo $row["id"]; ?>"  class="link"><img  class='link-icon' alt='Delete' title='Delete' src='images/delete.png' width='15px' height='15px'hspace='10' /></a>
-	<?php } if($action =='Dispatch' ){ ?>
+	<?php } if($action =='Dispatch'  ){ ?>
 			<a href="freezer.php?action=Return&freezerId=<?php echo $row["id"]; ?>" class="link"><img class='link-icon' title='Create Return' src='images/returns.png' width='15px' height='15px' hspace='10' /></a>  		
 	<?php } ?>
 	

@@ -242,9 +242,9 @@ $(function() {
     </tr>
 		<tr>
 			
-			<td style="float:left;">Reference #</td > <td style="float:left;"> <input  type="text" name="reference" id="reference" class="txtField" /> </td>
+		<td style="float:left;">Reference #</td > <td style="float:left;"> <input  type="text" name="reference" id="reference" class="txtField" /> </td>
 	
-		 <td style="float:right;">Posting Date: <input  type="text" name="cdate" id="cdate" class="txtField" /> </td>
+		<td style="float:right;">Posting Date: <input  type="text" name="cdate" id="cdate" class="txtField" /> </td>
 		</tr>
 		
 		<tr>
@@ -253,12 +253,8 @@ $(function() {
 				<div  id="main" style="background-color:pink;width:100%;float:left;">
 				
 
-					<div id="items" style="width:230px;float:left;">
-						<div style="padding-left:5px;margin-bottom:5px;margin-top:2px;font-weight:900; " >Customer Information</div>
-						
 						<tr>
-						
-						</div>
+
 			
 			<?php 
 								
@@ -267,15 +263,10 @@ $(function() {
 									$custName=$custs['account_name'];
 							?>
 			
-			<td style="float:left;">Customer Name</td > <td style="float:left;"> 
-			
-			
-	<input value="<?=$custName?>" class="txtField custs" type="text" name="ccode" id="ccode" />
+						<td style="float:left;">Customer Name</td > 
+						<td style="float:left;"> 
+						<input value="<?=$custName?>" class="txtField custs" type="text" name="ccode" id="ccode" />
 				</td>
-					
-			
-		 
-		 
 		</tr>
 	
 		<tr> 
