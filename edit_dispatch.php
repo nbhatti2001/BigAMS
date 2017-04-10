@@ -15,7 +15,8 @@ if(isset($_POST['submit']))
 	$cdate 		= date("d/m/Y", strtotime($_POST['cdate']));
 	$from 		= $_SESSION['locationId'];
 	$userId		= $_SESSION['userId'];
-	$flds		= "driver,vehicle, reference,cdate,from_,user_id,entry_type";
+	
+	$flds		= "driver,vehicle,reference,cdate,from_,user_id,entry_type";
 	$values		= "driver='$driver', vehicle='$veh',reference= '$reference',cdate= '$cdate', from_ ='$from'";
 	$sql 		= "update dispatch_main set $values where id=$id";
 	//echo $sql;
@@ -23,7 +24,7 @@ if(isset($_POST['submit']))
 	//
 	$sql="delete from dispatch_detail where id=$id";
 	exeQuery($sql);
-	$itemCount = getValue("select count(*) as rcount from items where is_active=1","rcount");
+	$itemCount = getValue("selectcount(*) as rcount from items where is_active=1","rcount");
 	for($cnt=1;$cnt<=20;$cnt++)
 	{
 		if($_POST['cust'][$cnt]!='')

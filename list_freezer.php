@@ -61,13 +61,14 @@ require_once("includes/header.php");
 <form name="frmUser" method="post" action="">
     <div style="width:750px;">
     <div class="message"><?php if(isset($message)) { echo $message; } ?></div>
-    <table border="0" cellpadding="10" cellspacing="1" width="750px" class="tblListForm">
+    <table border="0" cellpadding="10" cellspacing="1" width="1000px" class="tblListForm">
     <tr class="listheader">
     <td>Reference #</td>
 	<td>Posting Date</td>
 	
 	<td>Customer Code</td>
 	<td>Delivery Address  </td>
+	<td>Type</td>
 
     <td width="60px">Actions</td>
     </tr>
@@ -87,6 +88,7 @@ require_once("includes/header.php");
 	<td><?php echo $row["account_name"]; ?></td>
 	
 	<td><?php echo $row["daddress"]; ?></td>
+	<td><?php echo $row["type"]; ?></td>
 
         
 
@@ -98,8 +100,9 @@ require_once("includes/header.php");
 	<?php }else{
 		if($_SESSION['userId'] == $row['user_id'] && FALSE ) {
 	?>
-		<a href="edit_transfer.php?action=<?=$action?>&tId=<?php echo $row["id"]; ?>" class="link"><img class='link-icon'  alt='Edit' title='Edit' src='images/edit.png' width='15px' height='15px' hspace='10' /></a>  
+		
 	<?php  } }?>
+	<a href="edit_freezer.php?action=<?=$action?>&fId=<?php echo $row["id"]; ?>" class="link"><img class='link-icon'  alt='Edit' title='Edit' src='images/edit.png' width='15px' height='15px' hspace='10' /></a>  
 	<?php if($_SESSION['userId'] == $row['user_id'] &&  false) { ?>
     <a href="delete_item.php?itemId=<?php echo $row["id"]; ?>"  class="link"><img  class='link-icon' alt='Delete' title='Delete' src='images/delete.png' width='15px' height='15px'hspace='10' /></a>
 	<?php } if($action =='Dispatch'  ){ ?>

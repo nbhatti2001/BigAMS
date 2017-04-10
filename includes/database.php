@@ -86,6 +86,17 @@ function getRegionsssss($region="")
 			</select>";
 	return $str;
 }
+function getftype($ftype="")
+{
+	$str= "<select name='freezertype' >
+				<option value=''>-- Select Type --</option>
+				<option value='1' "  .($ftype=="w-right up"?"selected":"")  ." >W-Right up</option>
+				<option value='2' "  .($ftype=="top glass"?"selected":"") . ">Top Glass</option>
+				
+			</select>";
+	return $str;
+	
+}
 function getRegions($def="",$name="",$js="")
 {
 	$sql="select * from regions where is_active=1 order by id";
@@ -99,6 +110,8 @@ function getRegions($def="",$name="",$js="")
 	$str.="\n </select>";
 	return $str;
 }
+
+
 
 function getFaculty($def="",$name="")
 {
