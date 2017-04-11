@@ -101,9 +101,13 @@ function getRegions($def="",$name="",$js="")
 {
 	$sql="select * from regions where is_active=1 order by id";
 	$rows=getRows($sql);
+	$req="";
 	if($name=="")
 		$name="region";	
-	$str= "\n <select id='$name' name='$name' onchange=\"$js\" >
+	if($name=="region1")
+			$req="required";
+	$str= "\n <select $req id='$name' name='$name' onchange=\"$js\">
+
 		<option value=''>-- Select Location --</option>";
 	for($cnt=0;$cnt<count($rows);$cnt++)
 		$str.="\n <option value='" . $rows[$cnt]['id']  . "' "  .($def==$rows[$cnt]['id']?"selected":"")  ." >". $rows[$cnt]['name']  ."</option>";

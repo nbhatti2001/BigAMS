@@ -246,7 +246,7 @@ $(function() {
 			
 		<td style="float:left;">Reference #</td > <td style="float:left;"> <input  type="text" name="reference" id="reference" class="txtField" required/> </td>
 	
-		<td style="float:right;">Posting Date: <input  type="text" name="cdate" id="cdate" class="txtField" /> </td>
+		<td style="float:right;">Posting Date: <input  type="text" name="cdate" id="cdate" class="txtField" required/> </td>
 		</tr>
 		
 		<tr>
@@ -288,7 +288,7 @@ $(function() {
 		<tr>
 			
 			<td style="float:left;">Date of Placement </td > <td style="float:left;"> 
-			<input  type="text" name="dop" id="cdatee" class="txtField" /> 
+			<input  type="text" name="dop" id="cdatee" class="txtField" required/> 
 			
 			
 			
@@ -329,24 +329,33 @@ $(function() {
 
 	<?php for($cnt=1;$cnt<=10;$cnt++ ) {
 	
-		?>
+
+		$required="";
+		if($cnt==1)
+			$required="required";
+
+	
+	
+	?>
+	
+	
+	
+
 	
 		<tr>
 		
-			<td style="float:left;" >Transfer From: <?=getRegions("",'region'.$cnt,"document.getElementById('qty$cnt').value=1" )?> </td >
+		<td style="float:left;" >Transfer From: <?=getRegions("",'region'.$cnt,"document.getElementById('qty$cnt').value=1" )?> </td >
 		
 		 <td style="float:left;">Freezer Type: 
 					
-					<select name="freezertype<?=$cnt?>"   >
+					<select <?=$required?> name="freezertype<?=$cnt?>">
 						<option value="w-right up"  >W-Right Up</option>
 						<option value="top glass">Top Glass</option>
 					</select> 
 					
 		</td>
-						
-					
-						
-			<td style="float:left;">Serial No: <input  type="text" name="serialno<?=$cnt?>" id="serialno" class="txtField" /> </td>
+	
+		<td style="float:left;">Serial No: <input  type="text" name="serialno<?=$cnt?>" id="serialno" class="txtField"  /> </td>	
 						
 			<td style="float:left;">Qty: <input  type="text" name="qty<?=$cnt?>" id="qty<?=$cnt?>"   class="txtshort"  /> </td>
 		</tr>
@@ -363,9 +372,6 @@ $(function() {
 			<tr>
 			<td style="float:left;">FPN Posted By: </td > <td style="float:left;"> <input type="text" name="fdn" id="fdn" class="txtField" /> </td>
 		 <td style="float:left;">TSO:  <?=getFaculty("",'tso')?> </td>
-
-						
-				
 			
 			</tr>
 			

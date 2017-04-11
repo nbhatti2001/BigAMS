@@ -204,7 +204,7 @@ $(function() {
 			
 		<td style="float:left;">Reference #</td > <td style="float:left;"> <input  type="text" name="reference" value="<?=$ref?>" id="reference" class="txtField" /> </td>
 	
-		<td style="float:right;">Posting Date: <input  type="text" name="cdate"   value="<?=$cdate?>" id="cdate" class="txtField" /> </td>
+		<td style="float:right;">Posting Date: <input  type="text" name="cdate"   value="<?=$cdate?>" id="cdate" class="txtField" required/> </td>
 		</tr>
 		
 	<tr>
@@ -249,7 +249,7 @@ $(function() {
 		<tr>
 			
 			<td style="float:left;">Date of Placement </td > <td style="float:left;"> 
-			<input  type="text" name="dop" value="<?php echo $dop?>" id="cdatee"  class="txtField" /> 
+			<input  type="text" name="dop" value="<?php echo $dop?>" id="cdatee"  class="txtField"  required/> 
 			
 			
 			
@@ -332,7 +332,7 @@ foreach ($rss as $row )
 						
 					
 						
-			<td style="float:left;">Serial No: <input  type="text" name="serialno<?=$start?>" value="<?=$row['serialno']?>" id="serialno" class="txtField" required/> </td>
+			<td style="float:left;">Serial No: <input   type="text" name="serialno<?=$start?>" value="<?=$row['serialno']?>" id="serialno" class="txtField" required/> </td>
 						
 			<td style="float:left;">Qty: <input  type="text" name="qty<?=$start?>" id="qty<?=$cnt?>"  value="<?=$row['qty']?>"  class="txtshort"  /> </td>
 			
@@ -353,6 +353,8 @@ foreach ($rss as $row )
 	
 <?php
 	for(  $cnt=$start; $cnt<=10;  $cnt++ ) { 
+	
+
 		?>
 	
 	
@@ -366,7 +368,7 @@ foreach ($rss as $row )
 		
 		 <td style="float:left;" >Freezer Type: 
 					
-									<select name="freezertype<?=$cnt?>" >
+									<select <?=$required?> name="freezertype<?=$cnt?>" >
 									<option value="w-right up">W-Right Up</option>
 									<option value="top glass">Top Glass</option>
 												
