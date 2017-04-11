@@ -32,7 +32,7 @@ if(isset($_POST['submit']))
 	$values		= "reference='$ref',date='$cdate',ccode='$custId',daddress='$deliver',type='$type',fdn='$fdn', tso='$tso',rsm='$rsm',nsm='$nsm',user_id='$userId'";
 	$sql 		= "update transfer_main set $values where id=$id";
 	exeQuery($sql);
-	
+	//printr($_POST);exit;
 	$message = "Freezer Updated Successfully";
 	
 	$sql="delete from transfer_detail where id=$id";
@@ -62,7 +62,7 @@ if(isset($_POST['submit']))
 				
 				else{
 					
-					header("Location:list_freezer.php?action=freezer&freezerId=$id",true);
+					header("Location:list_freezer.php?action=freezer",true);
 					
 					
 					
@@ -226,7 +226,7 @@ $(function() {
 						<td style="float:left;">Customer Name</td > 
 						<td style="float:left;"> 
 
-						<input value="<?=$custom?>"   class="txtField custs" type="text" name="ccode" id="ccode" />
+						<input value="<?=$custName.$custom?>"   <?=$custom?>  class="txtField custs" type="text" name="ccode" id="ccode" />
 				
 				
 				</td>
@@ -332,7 +332,7 @@ foreach ($rss as $row )
 						
 					
 						
-			<td style="float:left;">Serial No: <input  type="text" name="serialno<?=$start?>" value="<?=$row['serialno']?>" id="serialno" class="txtField" /> </td>
+			<td style="float:left;">Serial No: <input  type="text" name="serialno<?=$start?>" value="<?=$row['serialno']?>" id="serialno" class="txtField" required/> </td>
 						
 			<td style="float:left;">Qty: <input  type="text" name="qty<?=$start?>" id="qty<?=$cnt?>"  value="<?=$row['qty']?>"  class="txtshort"  /> </td>
 			
@@ -398,8 +398,7 @@ foreach ($rss as $row )
 		<tr>
 			<tr>
 			<td style="float:left;">FDN Posted By: </td > <td style="float:left;"> <input type="text" name="fdn" value="<?=$fdn ?>" id="fdn" class="txtField" /> </td>
-		
-			<td style="float:left;" >TSO: <?=getFaculty("",'tso')?>  </td>
+			<td style="float:left;" >TSO: <?=getFaculty("",'tso')?>   </td>
 
 			<td style="float:left;">RSM:<?=getFaculty("",'rsm')?></td > 
 			

@@ -30,6 +30,7 @@ if(isset($_POST['submit']))
 		$sql="update transfer_main set reference='$ref', date='$cdate',ccode='$custcode'
 		,cname='$custname', daddress='$deliver' , fdn='$fdn', tso='$tso', rsm='$rsm', nsm='$nsm' where id='$id'";	
 		exeQuery($sql);
+		
 		$sql="delete from transfer_detail where id='$id'";
 		exeQuery($sql);
 	}
@@ -42,6 +43,7 @@ if(isset($_POST['submit']))
 		$sql 		= "insert into transfer_main($flds) values($values)";
 		//echo "<br /> $sql";
 		$id			= exeQuery($sql);
+		//printr($_POST);exit;
 		
 	
 	}
@@ -242,7 +244,7 @@ $(function() {
     </tr>
 		<tr>
 			
-		<td style="float:left;">Reference #</td > <td style="float:left;"> <input  type="text" name="reference" id="reference" class="txtField" /> </td>
+		<td style="float:left;">Reference #</td > <td style="float:left;"> <input  type="text" name="reference" id="reference" class="txtField" required/> </td>
 	
 		<td style="float:right;">Posting Date: <input  type="text" name="cdate" id="cdate" class="txtField" /> </td>
 		</tr>
@@ -265,7 +267,7 @@ $(function() {
 			
 						<td style="float:left;">Customer Name</td > 
 						<td style="float:left;"> 
-						<input value="<?=$custName?>" class="txtField custs" type="text" name="ccode" id="ccode" />
+						<input value="<?=$custName?>" class="txtField custs" type="text" name="ccode" id="ccode" required/>
 				</td>
 		</tr>
 	
@@ -331,17 +333,16 @@ $(function() {
 	
 		<tr>
 		
-			<td style="float:left;" >Transfer From:
-			
-			<?=getRegions("",'region'.$cnt,"document.getElementById('qty$cnt').value=1")?> 
-			</td >
+			<td style="float:left;" >Transfer From: <?=getRegions("",'region'.$cnt,"document.getElementById('qty$cnt').value=1" )?> </td >
 		
-		 <td style="float:left;" >Freezer Type: 
+		 <td style="float:left;">Freezer Type: 
 					
 					<select name="freezertype<?=$cnt?>"   >
 						<option value="w-right up"  >W-Right Up</option>
-												<option value="top glass">Top Glass</option>
-						</select> </td>
+						<option value="top glass">Top Glass</option>
+					</select> 
+					
+		</td>
 						
 					
 						

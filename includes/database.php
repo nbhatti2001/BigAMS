@@ -103,7 +103,7 @@ function getRegions($def="",$name="",$js="")
 	$rows=getRows($sql);
 	if($name=="")
 		$name="region";	
-	$str= "\n <select id='$name' name='$name' onclick=\"$js\" >
+	$str= "\n <select id='$name' name='$name' onchange=\"$js\" >
 		<option value=''>-- Select Location --</option>";
 	for($cnt=0;$cnt<count($rows);$cnt++)
 		$str.="\n <option value='" . $rows[$cnt]['id']  . "' "  .($def==$rows[$cnt]['id']?"selected":"")  ." >". $rows[$cnt]['name']  ."</option>";
